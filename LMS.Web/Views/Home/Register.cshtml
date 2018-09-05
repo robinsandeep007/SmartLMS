@@ -1,0 +1,45 @@
+﻿@model UserModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>Register</h2>
+
+<div class="form-horizontal">
+    <form asp-controller="Home" asp-action="Register" method="post">
+        @if (ViewBag.Message != null)
+        {
+            <div class="form-control">
+                <div class="col-md-10">@ViewBag.Message</div>
+            </div>
+        }
+
+
+        <div class="form-group">
+            <label asp-for="username" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="username" class="form-control" />
+                <span asp-validation-for="username" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="password" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="password" class="form-control" />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="useremail" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="useremail" class="form-control" />
+                <span asp-validation-for="useremail" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" class="btn btn-default">Register</button>
+            </div>
+        </div>
+    </form>
+</div>
